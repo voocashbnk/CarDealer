@@ -1,0 +1,6 @@
+<aura:component description="CD_AutohousesListItem">
+    <aura:attribute name="autohouse" type="Account"/>
+    <li>
+        <a>{!v.autohouse.Name}</a> 
+    </li>
+</aura:component>

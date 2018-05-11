@@ -1,0 +1,16 @@
+<apex:component id="MC_loadingIconSLDS" access="global">
+    <apex:attribute name="text" type="String" description="Displayed text" default="Please wait"/>
+    <apex:actionStatus id="status">
+        <apex:facet name="start">
+            <div class="demo-only demo--inverse" style="height: 6rem;">
+                <div class="slds-spinner_container slds-is-fixed" style="opacity: 0.5; z-index: 1009; background-color: white;">
+                    <div role="status" class="slds-spinner slds-spinner_brand slds-spinner_medium">
+                        <span class="slds-assistive-text">Loading</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+            </div>
+        </apex:facet>
+    </apex:actionStatus>
+</apex:component>

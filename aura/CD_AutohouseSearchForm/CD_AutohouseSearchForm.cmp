@@ -1,0 +1,49 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" description="CD_AutohouseSearchForm"
+                controller="CD_AutohouseSearchController">
+
+    <aura:attribute type="Account" name="searchedAutohouse"
+                    default="{'sobjectType': 'Account',
+                              'Name': ''}"/>
+    <aura:attribute type="Account[]" name="selectedAutohouses"/>
+    <aura:registerEvent name="autohousesLoaded" type="c:AutohousesLoaded" />
+    <aura:registerEvent name="selectedAutohouseOnList" type="c:CD_SelectedAutohouseOnList" />
+    <aura:registerEvent name="removeHighlightFromAllRowsEvent" type="c:CD_RemoveHighlightFromAllRowsEvent" />
+
+    <div class="slds-card">
+        <div class="slds-form slds-form_compound ">
+            <fieldset class="slds-form-element ">
+                <legend class="slds-form-element__label slds-text-title_caps">Search Parameters</legend>
+                <div class="slds-form-element__group">
+                    <div class="slds-form-element__row slds-box slds-theme_shade">
+                        <div class="slds-form-element slds-small-order--1">
+                            <lightning:input label="Name" aura:id="autohouseSearchForm" Class="slds-input"
+                                             value="{!v.searchedAutohouse.Name}" name="autohouseName"/>
+                        </div>
+                        <!--<div class="slds-form-element slds-small-order&#45;&#45;1">-->
+                            <!--<lightning:input label="Country" aura:id="input-01" Class="slds-input"-->
+                                             <!--value="{!v.searchedAutohouse.BillingCountry}"/>-->
+                        <!--</div>-->
+                        <!--<div class="slds-form-element slds-small-order&#45;&#45;2">-->
+                            <!--<lightning:input label="City" aura:id="input-02" Class="slds-input"-->
+                                             <!--value="{!v.searchedAutohouse.BillingCity}"/>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <footer class="slds-card__footer">
+            <div class="slds-no-flex">
+                <lightning:button label="Search" 
+                                  class="slds-m-top--medium"
+                                  variant="neutral"
+                                  onclick="{!c.clickSearchAutohouses}"/>
+                <lightning:button label="Clear"
+                                  class="slds-m-top--medium"
+                                  variant="neutral"
+                                  onclick="{!c.clearForm}"/>
+            </div>
+        </footer>
+        <c:CD_AutohouseSelectedList selectedAutohouses="{!v.selectedAutohouses}" />
+    </div>
+
+</aura:component>

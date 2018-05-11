@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="AutohousesLoaded">
+    <aura:attribute name="autohouses" type="Account[]" />
+</aura:event>
