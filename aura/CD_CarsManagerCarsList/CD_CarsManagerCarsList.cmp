@@ -13,7 +13,7 @@
                     <h2>
                         <a href="javascript:void(0);" class="slds-card__header-link slds-truncate"
                            title="[object Object]">
-                            <span class="slds-text-heading_small">Search Cars</span>
+                            <span class="slds-text-heading_small">Search For Cars</span>
                         </a>
                     </h2>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="slds-form-element__group">
                     <div class="slds-form-element__row">
                         <div class="slds-form-element slds-size--1-of-2">
-                            <lightning:input label="Name" aura:id="searchCarForm" name="carName" value="{!v.searchedCar.Name}"></lightning:input>
+                            <lightning:input label="Brand" aura:id="searchCarForm" name="carBrand" value="{!v.searchedCar.Name}"></lightning:input>
                         </div>
                         <div class="slds-form-element slds-size--1-of-2">
                             <lightning:input label="Model" aura:id="searchCarForm" name="carModel" value="{!v.searchedCar.CD_CarModel__c}"></lightning:input>
@@ -43,18 +43,9 @@
         </div>
         <footer class="slds-card__footer">
             <div class="slds-no-flex">
-                <lightning:button label="Search"
-                                  class="slds-m-top--medium"
-                                  variant="neutral"
-                                  onclick="{!c.searchCars}"/>
-                <lightning:button label="Clear"
-                                  class="slds-m-top--medium"
-                                  variant="neutral"
-                                  onclick="{!c.clearForm}"/>
-                <lightning:button label="Create"
-                                  class="slds-m-top--medium"
-                                  variant="neutral"
-                                  onclick="{!c.createNewCar}"/>
+                <lightning:button label="Search" class="slds-m-top--medium" variant="neutral" onclick="{!c.searchCars}"/>
+                <lightning:button label="Clear" class="slds-m-top--medium" variant="neutral" onclick="{!c.clearForm}"/>
+                <lightning:button label="Create" class="slds-m-top--medium" variant="neutral" onclick="{!c.createNewCar}"/>
             </div>
         </footer>
 
@@ -62,7 +53,7 @@
             <thead>
             <tr class="slds-text-title_caps">
                 <th scope="col">
-                    <div class="slds-truncate" title="Name">Name</div>
+                    <div class="slds-truncate" title="Brand">Brand</div>
                 </th>
                 <th scope="col">
                     <div class="slds-truncate" title="Model">Model</div>
@@ -81,21 +72,21 @@
             <tbody>
             <aura:iteration items="{!v.cars}" var="car" indexVar="index">
                 <tr>
-                    <td data-label="Name">
+                    <td data-label="Brand">
                         <lightning:formattedText value="{!car.Name}"></lightning:formattedText>
                     </td>
                     <td data-label="Model">
                         <lightning:formattedText value="{!car.CD_CarModel__c}"></lightning:formattedText>
                     </td>
                     <td data-label="Year">
-                        <lightning:formattedDateTime value="{!car.CD_ModelYear__c}"></lightning:formattedDateTime>
+                        <lightning:formattedText value="{!car.CD_ModelYear__c}"></lightning:formattedText>
                     </td>
                     <td data-label="VIN">
                         <lightning:formattedText value="{!car.CD_VIN__c}"></lightning:formattedText>
                     </td>
                     <td data-label="Actions">
 
-                        <lightning:buttonMenu iconName="utility:settings" alternativeText="Settings">
+                        <lightning:buttonMenu iconName="utility:down" alternativeText="Settings">
                             <lightning:menuItem label="Edit" onactive="{!c.editCar}" value="{!car.Id}" />
                             <lightning:menuItem label="Delete" onactive="{!c.deleteCar}" value="{!index}"/>
                         </lightning:buttonMenu>
