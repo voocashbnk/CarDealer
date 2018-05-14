@@ -1,4 +1,3 @@
-
 ({
     getCars: function(component, searchedCar){
         var action = component.get("c.getCarsList");

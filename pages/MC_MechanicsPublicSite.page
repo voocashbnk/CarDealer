@@ -1,0 +1,207 @@
+<apex:page id="MC_MechanicPublicSite" standardController="MC_Mechanic__c" extensions="MC_MechanicPublicSiteController"
+           showHeader="false" sideBar="false" standardStylesheets="false" docType="html-5.0">
+    <html>
+    <HEAD>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+        <apex:stylesheet value="{!URLFOR($Resource.SLDSZIP, 'salesforce-lightning-design-system/assets/styles/salesforce-lightning-design-system-vf.min.css')}"/>
+        <script>
+            var j$ = jQuery.noConflict();
+
+        </script>
+        <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"/>
+    </HEAD>
+    <Body onload="myFunction()">
+
+    <div class="slds-brand-band slds-brand-band_large">
+        <article class="slds-card" style="margin-top: 20px; padding-bottom: 10px; width: 90%; margin: auto;"
+                 id="standardPage">
+            <div class="slds-tabs--default">
+                <ul class="slds-tabs--default__nav" role="tablist">
+                    <li class="slds-tabs--default__item slds-text-heading--label slds-active" title="Offer"
+                        role="presentation">
+                        <a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="0"
+                           aria-selected="true" aria-controls="tab-default-1" id="tab-default-1__item">Offer</a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Contact" role="presentation">
+                        <a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="-1"
+                           aria-selected="false" aria-controls="tab-default-2" id="tab-default-2__item">Contact</a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Random Mechanics"
+                        role="presentation">
+                        <a class="slds-tabs--default__link" href="javascript:void(0);" role="tab" tabindex="-1"
+                           aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item">Random
+                            Mechanics</a></li>
+                </ul>
+                <div id="tab-default-1" class="slds-tabs--default__content slds-show" role="tabpanel"
+                     aria-labelledby="tab-default-1__item">
+                    Under construction....
+                </div>
+
+                <div id="tab-default-2" class="slds-tabs--default__content slds-hide" role="tabpanel"
+                     aria-labelledby="tab-default-2__item">
+
+                    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+                        <div class="slds-form slds-form_compound " style="margin:auto;width:30%">
+                            <fieldset class="slds-form-element ">
+                                <legend class="slds-form-element__label slds-text-title_caps">Leave your contact
+                                    information
+                                </legend>
+                                <div class="slds-form-element__group">
+                                    <div class="slds-form-element__row slds-box slds-theme_shade">
+
+                                        <div class="slds-form-element slds-x-small " style="margin:auto;">
+                                            <input type="hidden" name="oid" value="00D1r000001GpfA"/>
+                                            <!--<input type="hidden" name="retURL" value="http://www.starpaintersadelaide.com.au/wp-content/uploads/2015/09/Thank-You_tablet.png"/>-->
+                                            <input type="hidden" name="retURL"
+                                                   value="http://sftrainingbtn-developer-edition.eu12.force.com/randommechanicstable?merci"/>
+
+                                            <label class="slds-form-element__label" for="first_name">First Name</label>
+                                            <input class="slds-input" id="first_name" maxlength="40" name="first_name"
+                                                   size="20" type="text"/><br/>
+
+                                            <label class="slds-form-element__label" for="last_name">Last Name</label>
+                                            <input class="slds-input" id="last_name" maxlength="80" name="last_name"
+                                                   size="20" type="text"/><br/>
+
+                                            <label class="slds-form-element__label" for="email">Email</label>
+                                            <input class="slds-input" id="email" maxlength="80" name="email" size="20"
+                                                   type="email" required="true"/><br/>
+
+                                            <label class="slds-form-element__label" for="company">Company</label>
+                                            <input class="slds-input" id="company" maxlength="40" name="company"
+                                                   size="20" type="text"/><br/>
+
+                                            <label class="slds-form-element__label" for="lead_source"></label>
+                                            <input type="hidden" name="lead_source" value="Web to Lead"/>
+
+                                            <div class="slds-button-group slds-align_absolute-center" role="group">
+                                                <input type="submit" name="submit" value="Send"
+                                                       class="slds-button slds-button_neutral"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </form>
+
+                </div>
+
+                <div id="tab-default-3" class="slds-tabs--default__content slds-hide" role="tabpanel"
+                     aria-labelledby="tab-default-3__item">
+                    <apex:slds />
+
+                    <div class="slds-scope">
+                        <div class="slds-page-header">
+                            <div class="slds-media">
+                                <div class="slds-media__figure">
+                                    <span class="slds-icon_container slds-icon-standard-opportunity">
+                                    <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                                         xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity"/>
+                                    </svg>
+                                    </span>
+                                </div>
+                                <div class="slds-media__body">
+                                    <h1 class="slds-page-header__title slds-truncate slds-align-middle">Random
+                                        Mechanics</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                            <thead>
+                            <tr class="slds-text-title_caps">
+                                <th scope="col">
+                                    <div class="slds-truncate" title="First Name">First Name</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Last Name">Last Name</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="City">City</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Country">Country</div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <apex:repeat value="{!allMechanics}" var="mechanic" first="0">
+                                <tr>
+                                    <td data-label="First Name">
+                                        <div class="slds-truncate" title="First Name">{!mechanic.MC_FirstName__c}</div>
+                                    </td>
+                                    <td data-label="Last Name">
+                                        <div class="slds-truncate" title="Last Name">{!mechanic.Name}</div>
+                                    </td>
+                                    <td data-label="City">
+                                        <div class="slds-truncate" title="City">{!mechanic.MC_City__c}</div>
+                                    </td>
+                                    <td data-label="Country">
+                                        <div class="slds-truncate" title="Country">{!mechanic.MC_Country__c}</div>
+                                    </td>
+                                </tr>
+                            </apex:repeat>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--<img id="liveagent_button_online_5731r0000008WRk" style="display: none; border: 0px none; cursor: pointer" onclick="liveagent.startChat('5731r0000008WRk')" src="https://sftrainingbtn-developer-edition.eu12.force.com/randommechanicstable/resource/1524090046000/OnlineButton" /><img id="liveagent_button_offline_5731r0000008WRk" style="display: none; border: 0px none; " src="https://sftrainingbtn-developer-edition.eu12.force.com/randommechanicstable/resource/1524090071000/offlinebutton" />-->
+                </div>
+            </div>
+        </article>
+        <div style="display:none;text-align:center;height:100%" id="merciContainer">
+            <br/>
+            <h1 style="font-size:20px;margin:auto;">Thanks for your time. We will contact you shortly</h1>
+            <br/>
+            <a href="http://sftrainingbtn-developer-edition.eu12.force.com/randommechanicstable">
+                <button class="slds-button slds-button_neutral">Back to previous page</button>
+            </a>
+        </div>
+    </div>
+
+
+    <!--<script type="text/javascript">-->
+    <!--if (!window._laq) { window._laq = []; }-->
+    <!--window._laq.push(function(){liveagent.showWhenOnline('5731r0000008WRk', document.getElementById('liveagent_button_online_5731r0000008WRk'));-->
+    <!--liveagent.showWhenOffline('5731r0000008WRk', document.getElementById('liveagent_button_offline_5731r0000008WRk'));-->
+    <!--});-->
+    <!--</script>-->
+    <!--<script type='text/javascript' src='https://c.la1-c2-frf.salesforceliveagent.com/content/g/js/42.0/deployment.js'></script>-->
+    <!--<script type='text/javascript'>-->
+    <!--liveagent.init('https://d.la1-c2-frf.salesforceliveagent.com/chat', '5721r0000008WVX', '00D1r000001GpfA');-->
+    <!--</script>-->
+    <script>
+
+    /*SLDS Tabs JS*/
+    j$('.slds-tabs--default__link,.slds-tabs--scoped__link').click(function(){
+      j$(this).parent().parent().find('.slds-tabs--default__link,.slds-tabs--scoped__link').attr('aria-selected','false');
+      j$(this).attr('aria-selected','true');
+      j$(this).parent().parent().find('.slds-tabs--default__link,.slds-tabs--scoped__link').attr('tabindex','-1');
+      j$(this).attr('tabindex','0');
+      j$(this).parent().addClass('slds-active').siblings().removeClass('slds-active');
+      j$(this).parent().parent().parent().find('.'+j$(this).parent().parent().parent().find('.slds-tabs--default__content,.slds-tabs--scoped__content')[0].classList[0]).removeClass('slds-show').addClass('slds-hide');
+      j$(this).parent().parent().parent().find('#'+j$(this).attr('aria-controls')).removeClass('slds-hide').addClass('slds-show');
+    });
+    /*SLDS Tabs JS*/
+function myFunction() {
+    var url = window.location.href;
+    console.log('URL: '+url);
+    var x = document.getElementById("standardPage");
+    var y = document.getElementById("merciContainer");
+    var bool = url.indexOf("?merci") !== -1;
+    console.log('bool '+bool);
+    console.log('_____'+ url.indexOf("?merci"));
+    if (url.indexOf("?merci") !== -1) {
+        x.style.display = "none";
+        y.style.display = "block";
+    } else {
+        x.style.display = "block";
+        y.style.display = "none";
+    }
+}
+
+    </script>
+    </Body>
+    </html>
+</apex:page>

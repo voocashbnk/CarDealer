@@ -11,5 +11,5 @@
             component.set("v.searchedAutohouse", searchedAutohouse);
 //            helper.showDetails(component, '');
             },
-
+            
 })

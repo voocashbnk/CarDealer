@@ -1,4 +1,3 @@
-
 <aura:component description="CD_spinner" implements="flexipage:availableForAllPageTypes">
     <aura:handler event="aura:waiting" action="{!c.waiting}"/>
     <aura:handler event="aura:doneWaiting" action="{!c.doneWaiting}"/>
