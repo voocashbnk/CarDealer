@@ -2,9 +2,7 @@
 ({
     searchCars: function(component, event, helper){
         var searchedCar = component.get("v.searchedCar");
-        console.log('serched car: '+searchedCar);
-        console.log('serched car: '+searchedCar.CD_ModelYear__c);
+        console.log('car JSON', JSON.stringify(searchedCar));
         helper.getCars(component, searchedCar);
-
     },
 })
