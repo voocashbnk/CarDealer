@@ -6,21 +6,12 @@
     <aura:registerEvent type="c:CD_SelectedAutohouseOnList" name="selectedAutohouseOnList"/>
     <aura:handler event="c:CD_RemoveHighlightFromAllRowsEvent" action="{!c.removeHighlightFromAllRowsEventAction}" />
 
-    <!--<ul>-->
-        <!--<aura:iteration items="{!v.selectedAutohouses}" var="autohouses" >-->
-            <!--<c:CD_AutohousesListItem autohouse="{!autohouses}" />-->
-        <!--</aura:iteration>-->
-    <!--</ul>-->
-
     <table class="slds-table slds-table_bordered slds-table_cell-buffer">
         <thead>
         <tr class="slds-text-title_caps">
             <th scope="col">
-                <div class="slds-truncate" title="Name">Name</div>
+                <div class="slds-truncate" title="Name">{!$Label.c.CD_Name}</div>
             </th>
-            <!--<th scope="col">-->
-                <!--<div class="slds-truncate" title="Actions">Actions</div>-->
-            <!--</th>-->
         </tr>
         </thead>
         <tbody>
@@ -29,15 +20,7 @@
                 <td data-label="Name">
                     <lightning:formattedText value="{!autohouse.Name}"></lightning:formattedText>
                 </td>
-                <!--<td data-label="Actions">-->
-                    <!--<lightning:button  value="{!index}" class="slds-m-top&#45;&#45;small slds-hidden" onclick="{!c.tableRowClicked}"></lightning:button>-->
-                <!--</td>-->
             </tr>
-            <!--<tr>-->
-                <!--<td data-label="Country">-->
-                    <!--<lightning:formattedText value="{!autohouse.BillingCountry}"></lightning:formattedText>-->
-                <!--</td>-->
-            <!--</tr>-->
         </aura:iteration>
         </tbody>
     </table>

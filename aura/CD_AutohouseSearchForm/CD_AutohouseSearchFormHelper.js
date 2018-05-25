@@ -18,10 +18,10 @@
             });
             $A.enqueueAction(action);
         },
+
     showDetails: function(component, autohouseId) {
           let eventShowDetails = $A.get("e.c:CD_SelectedAutohouseOnList");
-          console.log('eventDetails object______'+eventShowDetails);
           eventShowDetails.setParams({"autohouseId": autohouseId});
           eventShowDetails.fire();
-      }
+      },
 })

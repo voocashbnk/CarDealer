@@ -9,7 +9,6 @@
             var searchedAutohouse = component.get("v.searchedAutohouse");
             searchedAutohouse.Name = '';
             component.set("v.searchedAutohouse", searchedAutohouse);
-//            helper.showDetails(component, '');
             },
             
 })

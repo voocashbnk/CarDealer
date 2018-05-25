@@ -6,18 +6,17 @@ public with sharing class CD_AutohouseSearchController {
         return [SELECT id,name, CD_Location__Latitude__s, CD_Location__Longitude__s
                 FROM Account
                 WHERE
-//                BillingCountry LIKE :'%' + searchedAutohouse.BillingCountry + '%' AND
                 Name LIKE :'%' + searchedAutoHouse.Name + '%' AND
                 CD_Location__Latitude__s != null AND
                 CD_Location__Longitude__s != null
-//                AND
-//                BillingCity LIKE :'%' + searchedAutohouse.BillingCity + '%'
                 ] ;
     }
+
     @AuraEnabled
     public static Account getAutohouseDetailsById(String autohouseId){
         return [SELECT Id, Name, Phone, Website, BillingCity FROM Account WHERE Id =: autohouseId];
     }
+
     @AuraEnabled
     public static List<Account> getAllAccounts(){
         return [SELECT id, name, CD_Location__Latitude__s, CD_Location__Longitude__s

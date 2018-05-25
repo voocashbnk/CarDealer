@@ -63,6 +63,5 @@
                map.panTo([autohouse.CD_Location__Latitude__s, autohouse.CD_Location__Longitude__s]);
            }
            component.set('v.markers', markers);
-       }
-
+       },
 })
