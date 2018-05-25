@@ -1,13 +1,14 @@
 public with sharing class MC_MechanicPublicSiteController {
     public Integer numberOfRecordsToDisplay {get; set;}
     public List<MC_Mechanic__c> allMechanics {get;set;}
+    public final Integer maximumNoOfRecordsToDisplay = 5;
 
     public MC_MechanicPublicSiteController(ApexPages.standardController controller){
         Integer checkCount = getAllMechanicsCount();
-        if (checkCount<5){
+        if (checkCount<maximumNoOfRecordsToDisplay){
             numberOfRecordsToDisplay = checkCount;
-        } else numberOfRecordsToDisplay = 5;
-        allMechanics = getMechanicsToDisplay();
+        } else numberOfRecordsToDisplay = maximumNoOfRecordsToDisplay;
+            allMechanics = getMechanicsToDisplay();
     }
 
     public List<MC_Mechanic__c> getMechanicsToDisplay(){
@@ -26,8 +27,7 @@ public with sharing class MC_MechanicPublicSiteController {
 
     private Integer getAllMechanicsCount(){
         List<AggregateResult> allMechanics = [SELECT count(Id)cnt FROM MC_Mechanic__c];
-        Integer mechanicsCount = (Integer) allMechanics[0].get('cnt');
-        return mechanicsCount;
+        return (Integer) allMechanics[0].get('cnt');
     }
 
     private List<Integer> getRandomIntegers(Integer size){
@@ -36,7 +36,7 @@ public with sharing class MC_MechanicPublicSiteController {
         while (randomIntegers.size() < numberOfRecordsToDisplay){
             randomIntegers.add(Math.round(Math.random()*randomRange));
         }
-        List<Integer> resultList = new List<Integer>(randomIntegers);
-        return resultList;
+        return new List<Integer>(randomIntegers);
+
     }
 }
