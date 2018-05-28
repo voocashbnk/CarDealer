@@ -67,7 +67,7 @@
                                                 <div class="slds-form-element slds-x-small " style="margin:auto;">
                                                     <input type="hidden" name="oid" value="00D1r000001GpfA"/>
                                                     <input type="hidden" name="retURL"
-                                                           value="http://sftrainingbtn-developer-edition.eu12.force.com/randommechanicstable?merci"/>
+                                                           value="{!siteURL+'?merci'}"/>
                                                     <label class="slds-form-element__label" for="first_name">{!$Label.MC_firstName}</label>
                                                     <input class="slds-input" id="first_name" maxlength="40" name="first_name"
                                                            size="20" type="text"/><br/>
@@ -157,12 +157,11 @@
                     <br/>
                     <h1 style="font-size:20px;margin:auto;">{!$Label.MC_ThanksWeWillContactYouShortly}</h1>
                     <br/>
-                    <a href="http://sftrainingbtn-developer-edition.eu12.force.com/randommechanicstable">
+                    <a href="{!siteURL}">
                         <button class="slds-button slds-button_neutral">{!$Label.MC_BackToPreviousPage}</button>
                     </a>
                 </div>
             </div>
-
 
             <!--<script type="text/javascript">-->
             <!--if (!window._laq) { window._laq = []; }-->
@@ -204,7 +203,6 @@
                     y.style.display = "none";
                 }
         }
-
             </script>
         </BODY>
     </HTML>

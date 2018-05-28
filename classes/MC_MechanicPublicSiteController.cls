@@ -2,8 +2,10 @@ public with sharing class MC_MechanicPublicSiteController {
     public Integer numberOfRecordsToDisplay {get; set;}
     public List<MC_Mechanic__c> allMechanics {get;set;}
     public final Integer maximumNoOfRecordsToDisplay = 5;
+    public String siteURL {get; set;}
 
     public MC_MechanicPublicSiteController(ApexPages.standardController controller){
+        siteURL = Site.getBaseUrl();
         Integer checkCount = getAllMechanicsCount();
         if (checkCount<maximumNoOfRecordsToDisplay){
             numberOfRecordsToDisplay = checkCount;
@@ -37,6 +39,7 @@ public with sharing class MC_MechanicPublicSiteController {
             randomIntegers.add(Math.round(Math.random()*randomRange));
         }
         return new List<Integer>(randomIntegers);
-
     }
+
+
 }
